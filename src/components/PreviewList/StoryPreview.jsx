@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Image = styled.img`
     width: 100%;
@@ -28,12 +29,19 @@ const Image = styled.img`
 
     align-items: center;
     justify-content: space-evenly;
+  `,
+  LinkBlock = styled(Link)`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   `
 
 const useHover = () => {
   const [hovered, setHovered] = useState(false);
   const onMouseEnter = () => setHovered(true),
-  onMouseLeave = () => setHovered(false);
+    onMouseLeave = () => setHovered(false);
 
   return {
     onMouseEnter,
@@ -44,20 +52,26 @@ const useHover = () => {
 
 const StoryPreview = props => {
   const hover = useHover();
-  const {hovered} = hover
-  const { lastOfRow, likeCount, commentCount, thumbnail_src, thumbnails } = props;
+  const { hovered } = hover;
+  const {
+    lastOfRow,
+    likeCount,
+    commentCount,
+    thumbnail_src,
+    thumbnails,
+    code
+  } = props;
 
   return (
-    <ImageContainer
-      {...hover}
-      lastOfRow={lastOfRow}
-    >
+    <ImageContainer {...hover} lastOfRow={lastOfRow}>
       <Image src={thumbnail_src} />
       <CaptionContainer hide={!hovered}>
-        <p style={{color: 'white'}}>
-          <span>Heart {likeCount}</span> 
-          <span>Comment {commentCount} </span> 
+        <p style={{ color: "white" }}>
+          <span>Heart {likeCount}</span>
+          <span>Comment {commentCount} </span>
         </p>
+
+        <LinkBlock to={"/p/" + code} />
       </CaptionContainer>
     </ImageContainer>
   );

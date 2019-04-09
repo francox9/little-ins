@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { ASYNC_SETUP_USER } from "../../store/actions.async";
 import { Header } from "./Header";
-import {PageContainer} from '../../bases/styled'
+import { PageContainer } from "../../bases/styled";
 import PreviewList from "../PreviewList";
 
 const mapStateToProps = state => ({
@@ -23,10 +23,7 @@ const User = props => {
     <PageContainer>
       <Header {...props} />
 
-      <PreviewList 
-        posts={props.posts} 
-      />
-
+      <PreviewList posts={props.posts} />
     </PageContainer>
   );
 };

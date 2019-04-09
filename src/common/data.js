@@ -27,7 +27,8 @@ const processUserPost = r => {
       likeCount: r.edge_media_preview_like.count,
       commentCount: r.edge_media_to_comment.count,
       thumbnail_src: r.thumbnail_src,
-      thumbnails: r.thumbnail_resources
+      thumbnails: r.thumbnail_resources,
+      code: r.shortcode
     };
   } catch (e) {
     return {};
@@ -41,7 +42,8 @@ const processExplore = r => {
         dimensions: i.dimensions,
         thumbnail_src: i.thumbnail_src,
         likeCount: i.edge_liked_by.count,
-        commentCount: i.edge_media_to_comment.count
+        commentCount: i.edge_media_to_comment.count,
+        code: i.shortcode
       }));
   } catch (e) {
     return [];

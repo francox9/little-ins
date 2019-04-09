@@ -1,10 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-
-const Link = styled.a`
-    color: #003569;
-    text-decoration: none;
-`
+import {Link} from './styled'
 
 export default text => {
     return text.split(/([@#]\S+)/)

@@ -16,6 +16,7 @@ export default props => {
             <PreviewList 
                 posts={posts} 
             />
+            
         </PageContainer>
     )
 } 

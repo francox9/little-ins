@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {RowContainer} from '../../bases/FlexItems'
 import { DotsButton, PadButton } from "../../bases/Buttons";
 import { useText } from "../../bases/useCollapsableText";
-// import {PageContainer} from '../../bases/styled'
+import {Link} from '../../bases/styled'
 
 const Container = styled.div`
   width: 100%;
@@ -54,7 +54,7 @@ const Content = props => {
         <br key={index + "breaker"} />
       ])}
     </p>,
-    <a href={linkShimmed}>{link}</a>
+    <Link strong href={linkShimmed}>{link}</Link>
   ];
 };
 

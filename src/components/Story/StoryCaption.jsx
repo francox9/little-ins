@@ -1,13 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-// import {SingleClnContainer} from '../../bases/FlexItems'
-// import configs from '../../common/configs'
 import useCollapsableText from '../../bases/useCollapsableText'
 import parseLinks from '../../bases/parseLinks'
-
-
-
-// const CAPTION_WORD_LIMIT = configs.CAPTION_WORD_LIMIT
 
 const Container = styled.div`
     padding: 10px;

@@ -1,12 +1,20 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import configs from '../common/configs'
 const {CAPTION_WORD_LIMIT} = configs
 
-export default (_content) => {
-    let contentLines = _content.split(/\n/)
-    let willShowAll = contentLines.length <= 1 && contentLines[0].length < CAPTION_WORD_LIMIT
+export const useText = text => {
+    return text.split(/\n/)
+}
 
-    const completeData = {moreToLoad: false, content:contentLines}
+export default (_content) => {
+    let contentLines = useText(_content)
+    let willShowAll = contentLines.length <= 1 && 
+                    contentLines[0].length < CAPTION_WORD_LIMIT
+
+    const completeData = {
+        moreToLoad: false, 
+        content:contentLines
+    }
 
     const [data, _showAll] = useState( willShowAll ? 
         completeData : 

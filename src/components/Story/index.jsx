@@ -23,19 +23,17 @@ const Story = props => {
     try { caption = props.story.edge_media_to_caption.edges[0].node.text }
     catch(e) {caption = ''}    
 
-    console.log(props.story)
-
-    const {display_url, dimensions, edge_media_preview_comment} = props.story
-    const {height, width} = dimensions
+    const {display_url, dimensions, edge_media_preview_comment, owner: author} = props.story
+    // const {height, width} = dimensions
 
     try { comments = edge_media_preview_comment || {count: 0, edges: []} }
     catch(e) { comments = {count: 0, edges: []}}
 
     return (
         <Container as="article">
-            <StoryTitle padding="10px"/>
+            <StoryTitle author={author} as="header"/>
             <StyledImage src={display_url} />
-            <StoryActions padding="10px"/>
+            <StoryActions/>
             <StoryCaption caption={caption}/>
             <Comments data={comments}/>
         </Container>

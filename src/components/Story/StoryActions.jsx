@@ -1,19 +1,24 @@
-import React from 'react'
+import React from "react";
 import styled from 'styled-components'
-import PropTypes from 'prop-types'
-import {FlexItem, Spacer, RowContainer} from '../../bases/FlexItems'
+import PropTypes from "prop-types";
+import { Spacer, RowContainer } from "../../bases/FlexItems";
+import { HeartButton, ShareButton, CommentButton, FavButton } from "../../bases/Buttons";
 
 
 const StoryActions = props => {
-    return (
-        <RowContainer  {...props}>
-            <FlexItem>Like</FlexItem>
-            <FlexItem>Comment</FlexItem>
-            <FlexItem>Share</FlexItem>
-            <Spacer/>
-            <FlexItem>Fav</FlexItem>
-        </RowContainer>
-    )
-}
+  return (
+    <RowContainer padding="0 10px">
+      <HeartButton/>
+      <ShareButton/>
+      <CommentButton/>
+      
 
-export default StoryActions
+
+      <Spacer />
+      
+      <FavButton/>
+    </RowContainer>
+  );
+};
+
+export default StoryActions;

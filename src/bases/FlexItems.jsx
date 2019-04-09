@@ -4,10 +4,11 @@ export const RowContainer = styled.div`
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
-  padding: ${props=>props.padding || 0}
+  align-items: center;
+  padding: ${props=>props.padding || '10px'}
 `;
 
-export const FlexItem = styled.span``;
+export const FlexItem = styled.div``;
 
 export const Spacer = styled.div`
     flex-grow: 1;

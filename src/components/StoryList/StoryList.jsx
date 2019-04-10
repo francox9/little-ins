@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { ASYNC_SETUP_STORIES } from "../../store/actions.async";
-import Story from "../Story";
+import {StoryCard} from "../Story";
 import styled from "styled-components";
 import { SingleClnContainer } from "../../bases/FlexItems";
 
 const StoriesContainer = styled(SingleClnContainer)`
   width: 600px;
   max-width: 100%;
-  margin-left: 100px;
+  margin: auto;
+  padding-top: 100px;
 `;
 
 const mapStateToProps = state => ({
@@ -26,7 +27,7 @@ const StoryList = props => {
   return (
     <StoriesContainer>
       {props.stories.map(story => (
-        <Story key={story.id} story={story} />
+        <StoryCard key={story.id} story={story} />
       ))}
     </StoriesContainer>
   );

@@ -6,6 +6,8 @@ const Link = styled.a`
     text-decoration: none;
 `
 
+export const notExist = a => a === null || a === undefined
+
 export const parseLink = text => {
     return text.split(/([\@\#]\S+)/)
       .map((phrase, index) => (phrase[0] == '#' || phrase[0] == '@') ? 

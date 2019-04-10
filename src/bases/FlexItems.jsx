@@ -1,11 +1,13 @@
 import styled from 'styled-components'
+import {notExist} from '../common/utils'
 
 export const RowContainer = styled.div`
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
   align-items: center;
-  padding: ${props=>props.padding || '10px'}
+  padding: ${props=> notExist(props.padding) ? '10px' : props.padding}
+  justify-content: ${props => props.justifyContent || 'flex-start'};
 `;
 
 export const FlexItem = styled.div``;

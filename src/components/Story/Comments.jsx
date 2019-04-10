@@ -36,11 +36,9 @@ const Comment = props => {
   ) 
 }
 const Comments = props => {
-    let {edges: comments, count} = props.data
-    comments = comments.map(c => c.node)
+    const {count, data: comments} = props 
     const showingAll = comments.length >= count
 
-    // console.log(comments, count, showingAll)
     return (
       <Container>
           {
